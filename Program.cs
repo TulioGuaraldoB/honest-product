@@ -2,6 +2,7 @@ using AutoMapper;
 using System.Text.Json.Serialization;
 using HonestProduct.Helpers;
 using HonestProduct.Repositories;
+using HonestProduct.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ var builder = WebApplication.CreateBuilder(args);
 
     // configure DI for application services
     services.AddScoped<IProductRepository, ProductRepository>();
+    services.AddScoped<IProductService, ProductService>();
 }
 
 var app = builder.Build();

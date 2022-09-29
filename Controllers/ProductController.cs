@@ -1,25 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using HonestProduct.Models;
-using HonestProduct.Repositories;
+using HonestProduct.Services;
 using HonestProduct.Dtos;
 
 namespace HonestProduct.Controllers;
 
 [ApiController]
-[Route("api/v1")]
+[Route("api/v1/product")]
 public class ProductController : Controller
 {
-    private IProductRepository _repository;
+    private IProductService _service;
 
-    public ProductController(IProductRepository repository)
+    public ProductController(IProductService service)
     {
-        _repository = repository;
+        _service = service;
     }
 
     [HttpGet]
     public IActionResult GetAllProducts()
     {
-        var products = _repository.GetAll();
+        var products = _service.GetAllProducts();
         var productsRes = products.Select(product => new ProductResponse
         {
             Id = product.Id,
@@ -34,7 +34,7 @@ public class ProductController : Controller
     [HttpGet("{id}")]
     public IActionResult GetProductById(int id)
     {
-        var product = _repository.GetProduct(id);
+        var product = _service.GetProductById(id);
         var productRes = new ProductResponse
         {
             Id = product.Id,
@@ -42,14 +42,14 @@ public class ProductController : Controller
             Brand = product.Brand,
             Price = product.Price,
         };
-        
+
         return Ok(productRes);
     }
 
     [HttpPost]
     public IActionResult InsertProduct(Product product)
     {
-        _repository.CreateProduct(product);
+        _service.CreateProduct(product);
         return Ok(new
         {
             message = "product inserted successfully",

@@ -10,7 +10,7 @@ public interface IProductService
     void CreateProduct(Product product);
 }
 
-public class ProductService
+public class ProductService : IProductService
 {
     private IProductRepository _repository;
 
