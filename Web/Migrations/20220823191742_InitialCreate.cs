@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace HonestProduct.Migrations
+namespace HonestProduct.Web.Migrations
 {
     public partial class InitialCreate : Migration
     {

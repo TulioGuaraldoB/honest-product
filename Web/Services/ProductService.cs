@@ -1,7 +1,7 @@
-using HonestProduct.Models;
-using HonestProduct.Repositories;
+using HonestProduct.Web.Models;
+using HonestProduct.Web.Repositories;
 
-namespace HonestProduct.Services;
+namespace HonestProduct.Web.Services;
 
 public interface IProductService
 {

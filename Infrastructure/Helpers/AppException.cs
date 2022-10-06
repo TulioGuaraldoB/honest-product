@@ -1,4 +1,4 @@
-namespace HonestProduct.Helpers;
+namespace HonestProduct.Infrastructure.Helpers;
 
 using System.Globalization;
 

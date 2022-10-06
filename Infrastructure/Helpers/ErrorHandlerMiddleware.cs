@@ -6,7 +6,7 @@ using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace HonestProduct.Helpers;
+namespace HonestProduct.Infrastructure.Helpers;
 
 public class ErrorHandlerMiddleware
 {

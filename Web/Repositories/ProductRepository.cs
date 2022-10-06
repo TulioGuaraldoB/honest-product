@@ -1,8 +1,8 @@
 using AutoMapper;
-using HonestProduct.Helpers;
-using HonestProduct.Models;
+using HonestProduct.Infrastructure.Helpers;
+using HonestProduct.Web.Models;
 
-namespace HonestProduct.Repositories;
+namespace HonestProduct.Web.Repositories;
 
 public interface IProductRepository
 {

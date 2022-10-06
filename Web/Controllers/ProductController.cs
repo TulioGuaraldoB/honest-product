@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using HonestProduct.Models;
-using HonestProduct.Services;
-using HonestProduct.Dtos;
+using HonestProduct.Web.Models;
+using HonestProduct.Web.Services;
+using HonestProduct.Web.Dtos;
 
-namespace HonestProduct.Controllers;
+namespace HonestProduct.Web.Controllers;
 
 [ApiController]
 [Route("api/v1/product")]

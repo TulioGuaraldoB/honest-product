@@ -1,7 +1,7 @@
-namespace HonestProduct.Helpers;
+namespace HonestProduct.Infrastructure.Helpers;
 
 using AutoMapper;
-using HonestProduct.Models;
+using HonestProduct.Web.Models;
 
 public class AutoMapperProfile : Profile
 {

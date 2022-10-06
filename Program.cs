@@ -1,13 +1,19 @@
 using AutoMapper;
 using System.Text.Json.Serialization;
-using HonestProduct.Helpers;
-using HonestProduct.Repositories;
-using HonestProduct.Services;
+using HonestProduct.Infrastructure.Helpers;
+using HonestProduct.Infrastructure.Config;
+using HonestProduct.Web.Repositories;
+using HonestProduct.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // add services to DI container
 {
+    var root = Directory.GetCurrentDirectory();
+    var dotenv = Path.Combine(root, ".env");
+    DotEnvFile.LoadFile(dotenv);
+    var config = new ConfigurationBuilder().AddEnvironmentVariables().Build();
+
     var services = builder.Services;
     var env = builder.Environment;
 
@@ -42,4 +48,4 @@ var app = builder.Build();
     app.MapControllers();
 }
 
-app.Run("http://localhost:8080");
+app.Run(Environment.GetEnvironmentVariable("HTTP_ADDRESS"));

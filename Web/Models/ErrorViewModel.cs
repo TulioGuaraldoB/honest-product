@@ -1,4 +1,4 @@
-namespace HonestProduct.Models;
+namespace HonestProduct.Web.Models;
 
 public class ErrorViewModel
 {
