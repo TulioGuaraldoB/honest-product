@@ -5,7 +5,7 @@ namespace HonestProduct.Web.Services;
 
 public interface IProductService
 {
-    IEnumerable<Product> GetAllProducts();
+    IQueryable<Product> GetAllProducts();
     Product GetProductById(int id);
     void CreateProduct(Product product);
 }
@@ -19,7 +19,7 @@ public class ProductService : IProductService
         _repository = repository;
     }
 
-    public IEnumerable<Product> GetAllProducts()
+    public IQueryable<Product> GetAllProducts()
     {
         var products = _repository.GetAll();
 

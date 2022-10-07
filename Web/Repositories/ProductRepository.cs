@@ -6,7 +6,7 @@ namespace HonestProduct.Web.Repositories;
 
 public interface IProductRepository
 {
-    IEnumerable<Product> GetAll();
+    IQueryable<Product> GetAll();
     Product GetProduct(int id);
     void CreateProduct(Product product);
 }
@@ -22,9 +22,9 @@ public class ProductRepository : IProductRepository
         _mapper = mapper;
     }
 
-    public IEnumerable<Product> GetAll()
+    public IQueryable<Product> GetAll()
     {
-        return _context.Products;
+        return _context.Products.AsQueryable();
     }
 
     public Product GetProduct(int id)
